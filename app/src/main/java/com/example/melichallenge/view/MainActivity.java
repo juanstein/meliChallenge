@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements ProductAdapter.On
 
             @Override
             public void onSearchAction(String currentQuery) {
+                gridLayoutManager.scrollToPositionWithOffset(0,0);
                 if (currentQuery.length() > 0 ){
                     mlProductController.getProductsWithQuery(currentQuery, new ResultListener<List<MLProduct>>() {
                         @Override
